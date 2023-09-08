@@ -29,6 +29,10 @@ const props = defineProps({
         type: Boolean,
         default: false
     },
+    type: {
+      type: String,
+      default: 'checkbox'
+    },
 })
 
 const handleClick = (event) => {
@@ -41,8 +45,9 @@ const handleClick = (event) => {
 </script>
 
 <template>
+  <div :class="[{'switch-container': type === 'switch'}]">
     <input
-      class="checkbox" 
+      :class="[{'checkbox': type === 'checkbox'}, {'switch': type === 'switch'}]" 
       type="checkbox"
       :name="name"
       :id="id"
@@ -56,6 +61,14 @@ const handleClick = (event) => {
     >
         {{ label }}
     </label>
+    <label 
+      class="switch__label"
+      :for="id"
+      v-if="type === 'switch'"
+    >
+        {{ label }}
+    </label>
+  </div>  
 </template>
 
 <style lang="scss" scoped>
@@ -103,6 +116,60 @@ const handleClick = (event) => {
   &:disabled + label::before {
     background-color: #e9ecef;
     border: 1px solid #ECEBED;
+  }
+}
+
+.switch {
+	height: 0;
+	width: 0;
+	visibility: hidden;
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+
+  &-container {
+    display: flex;
+    align-items: center;
+  }
+  &__label {
+    margin-left: 10px;
+  }
+  & + label {
+    cursor: pointer;
+    text-indent: -9999px;
+    width: 50px;
+    height: 35px;
+    background: #fafafa;
+    border: 1px solid #adb5bd;
+    display: block;
+    border-radius: 100px;
+    position: relative;
+    &:after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 5px;
+      width: 26px;
+      height: 26px;
+      background: #fff;
+      background: var(--primary);
+      border-radius: 90px;
+      transition: 0.3s;
+      transform: translateY(-50%);
+      }
+  }
+  &:checked {
+    & + label {
+      background: var(--primary);
+      &:after {
+        background: #fff;
+        left: calc(100% - 5px);
+        transform: translateX(-100%) translateY(-50%);
+      }
+      &:active:after {
+        width: 33px;
+      }
+    }
   }
 }
 </style>

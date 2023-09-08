@@ -17,6 +17,8 @@ const frameworksList = ref([
     {name: 'BackBone JS', id: 'f7'},
 ])
 const selectedFrameworks = ref([])
+
+const switchProfessional = ref(false)
 </script>
 
 <template>
@@ -51,6 +53,19 @@ const selectedFrameworks = ref([])
             v-model:value="selectedFrameworks"
             :options="frameworksList"
             name="frameworks"
+        />
+    </div>
+
+    <h2 class="heading-2">Switch</h2>
+    <p>switch: {{ switchProfessional }}</p>
+    <div class="line">
+        <app-checkbox
+            label="I'm a professional"
+            id="switch"
+            name="switch"
+            value="I'm a professional"
+            type="switch"
+            v-model:checked="switchProfessional"
         />
     </div>
 </template>
