@@ -36,7 +36,7 @@ const links = ref([
   background: #fff;
   position: fixed;
   width: 250px;
-  padding: 20px;
+  padding: 30px;
   transition: 0.2s;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.07);
   transform: translateX(-250px);

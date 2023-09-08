@@ -37,6 +37,10 @@ const toggleMenu = () => {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.conteiner {
+  padding: 62px 0 0 0;
+}
+
 .content {
   max-width: 1400px;
   margin-left: 250px;
@@ -50,7 +54,7 @@ const toggleMenu = () => {
 .sidebar-toggle {
   position: fixed;
   left: 0;
-  width: 15px;
+  width: 20px;
   background: var(--primary);
   height: 100%;
   top: 62px;
