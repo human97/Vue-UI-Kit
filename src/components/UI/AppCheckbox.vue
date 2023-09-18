@@ -80,6 +80,7 @@ const handleClick = (event) => {
     display: inline-flex;
     align-items: center;
     user-select: none;
+    cursor: pointer;
   }
   & + label::before {
     content: '';
@@ -94,6 +95,7 @@ const handleClick = (event) => {
     background-repeat: no-repeat;
     background-position: center center;
     background-size: 50% 50%;
+    transition: .3s;
   }
   &:checked + label::before {
     border-color: var(--primary);
@@ -104,7 +106,6 @@ const handleClick = (event) => {
     border-color: var(--primary-hover);
   }
   &:not(:disabled):active + label::before {
-    background-color: var(--primary);
     border: 1px solid #ECEBED;
   }
   &:focus + label::before {
@@ -112,6 +113,9 @@ const handleClick = (event) => {
   }
   &:focus:not(:checked) + label::before {
     border-color: var(--primary);
+  }
+  &:disabled + label {
+    cursor: default;
   }
   &:disabled + label::before {
     background-color: #e9ecef;
@@ -133,14 +137,15 @@ const handleClick = (event) => {
   }
   &__label {
     margin-left: 10px;
+    cursor: pointer;
   }
   & + label {
     cursor: pointer;
     text-indent: -9999px;
     width: 50px;
-    height: 35px;
+    height: 24px;
     background: #fafafa;
-    border: 1px solid #adb5bd;
+    border: 1px solid darken(#fafafa, 25%);
     display: block;
     border-radius: 100px;
     position: relative;
@@ -149,25 +154,23 @@ const handleClick = (event) => {
       position: absolute;
       top: 50%;
       left: 5px;
-      width: 26px;
-      height: 26px;
-      background: #fff;
+      width: 14px;
+      height: 14px;
       background: var(--primary);
       border-radius: 90px;
-      transition: 0.3s;
+      transition: .3s;
       transform: translateY(-50%);
       }
   }
   &:checked {
     & + label {
       background: var(--primary);
+      border-color: var(--primary);
       &:after {
         background: #fff;
         left: calc(100% - 5px);
+        transition: .3s;
         transform: translateX(-100%) translateY(-50%);
-      }
-      &:active:after {
-        width: 33px;
       }
     }
   }

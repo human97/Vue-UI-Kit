@@ -63,26 +63,24 @@ const emits = defineEmits(['update:value'])
     display: inline-flex;
     align-items: center;
     user-select: none;
+    cursor: pointer;
   }
   & + label::before {
-    content: '';
-    display: inline-block;
-    width: 24px;
-    height: 24px;
-    flex-shrink: 0;
-    flex-grow: 0;
-    border: 1px solid #adb5bd;
-    border-radius: 6px;
-    margin-right: 10px;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: 50% 50%;
-    border-radius: 50%;
+        content: '';
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        flex-shrink: 0;
+        flex-grow: 0;
+        border: 1px solid darken(#fafafa, 25%);
+        border-radius: 50%;
+        background: #fafafa;
+        margin-right: 10px; 
+        transition: .3s;
   }
   &:checked + label::before {
-    border-color: var(--primary);
     background-color: var(--primary);
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3e%3c/svg%3e");
+    box-shadow: inset 0 0 0 5px #fafafa;
   }
   &:not(:disabled):not(:checked) + label:hover::before {
     border-color: var(--primary-hover);
@@ -92,15 +90,17 @@ const emits = defineEmits(['update:value'])
     border: 1px solid #ECEBED;
   }
   &:focus + label::before {
-    box-shadow: 0px 7px 20px rgba(0, 0, 0, 0.07);
+    border-color: var(--primary);
   }
   &:focus:not(:checked) + label::before {
     border-color: var(--primary);
   }
+  &:disabled + label {
+    cursor: default;
+  }
   &:disabled + label::before {
     background-color: #e9ecef;
     border: 1px solid #ECEBED;
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3e%3c/svg%3e");
   }
 }
 </style>
