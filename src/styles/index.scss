@@ -31,7 +31,25 @@
     display: flex;
     flex-wrap: wrap;
     margin-bottom: 20px;
+
     &_block {
       display: block;
     }
+  }
+
+  // margin
+  .m-r-type > *:not(:last-of-type) {
+    margin-right: 10px;
+  }
+
+  .m-r-child > *:not(:last-child) {
+    margin-right: 10px;
+  }
+
+  .m-b-type > *:not(:last-of-type) {
+    margin-bottom: 10px;
+  }
+
+  .m-b-child > *:not(:last-child) {
+    margin-bottom: 10px;
   }
