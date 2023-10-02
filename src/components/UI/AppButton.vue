@@ -27,6 +27,10 @@ const props = defineProps({
     size: {
         type: String,
         default: 'normal'
+    },
+    fixed: {
+        type: String,
+        default: 'normal'
     }
 })
 
@@ -39,7 +43,7 @@ const clickOnButton = () => {
 
 <template>
     <button 
-        :class="['btn', `btn_${color}`, {'btn_rounded': rounded}, {'btn_outlined': outlined}, {'btn_icon': icon}, {'btn_large': size === 'large'}]"
+        :class="['btn', `btn_${color}`, {'btn_rounded': rounded}, {'btn_outlined': outlined}, {'btn_icon': icon}, {'btn_large': size === 'large'}, {'btn_medium': fixed === 'medium'}]"
         :disabled="disabled"
         @click="clickOnButton"
     >
@@ -128,6 +132,10 @@ const clickOnButton = () => {
   &_large {
     height: 48px;
     padding: 0 30px;
+  }
+  &_medium {
+    width: 150px;
+    height: 40px;
   }
 }
 </style>

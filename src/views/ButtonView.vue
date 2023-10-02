@@ -57,8 +57,11 @@ const eventForButton = () => {
     <div class="line m-r-type">
         <Button label="Normal" color="primary" />
         <Button label="Large" color="primary" size="large" />
-        <Button label="Large" color="success" size="large" />
-        <Button label="Normal" color="info" outlined />
+    </div>
+    <h2 class="heading-2">Fixed Size</h2>
+    <div class="line m-r-type">
+        <Button label="Normal" color="success" />
+        <Button label="Medium" color="success" fixed="medium" />
     </div>
     <h2 class="heading-2">Event</h2>
     <div class="line">
