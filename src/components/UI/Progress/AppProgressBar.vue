@@ -4,7 +4,7 @@ const props = defineProps({
         type: String,
         default: '300px',
     },
-    percent: {
+    progress: {
         type: Number,
         required: true,
     },
@@ -24,7 +24,7 @@ const props = defineProps({
             class="progress-percent"
             :style="[{'color': `var(--${color})`}]"
         >
-            {{ percent }}%
+            {{ progress }}%
         </span>
         <div 
             class="progress"
@@ -32,7 +32,7 @@ const props = defineProps({
         >
             <div 
                 class="progress-bar" 
-                :style="[{'width': `${percent}%`}, {'background': `var(--${color})`}]"
+                :style="[{'width': `${progress}%`}, {'background': `var(--${color})`}]"
             >
 
             </div>
