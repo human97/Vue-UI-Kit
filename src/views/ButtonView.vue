@@ -7,7 +7,7 @@ const eventForButton = () => {
 </script>
 
 <template>
-    <h1 class="heading-1">Button</h1>
+    <h1 class="heading-1">Buttons</h1>
     <h2 class="heading-2">Colors</h2>
     <div class="line m-r-type">
         <Button label="Primary" color="primary" />

@@ -9,5 +9,8 @@ export default defineConfig({
     alias: {
       "@": path.resolve(__dirname, "src")
     }
-  }
+  },
+  server: {
+    port: 3333, // Поменяйте этот порт на тот, который вам нужен
+  },
 })
