@@ -5,16 +5,16 @@ import TableRow from '@/components/UI/Table/TableRow.vue'
 import TableColumn from '@/components/UI/Table/TableColumn.vue'
 import Button from '@/components/UI/AppButton.vue'
 
-const tableHeads = ['Id', 'Author', 'Tatle', 'Cover', '']
+const tableHeads = ['Id', 'Author', 'Title', 'Cover', '']
 const tableSizeColumns = '50px 1fr 2fr 150px 140px'
 
-const sortField = ref('id')
+const sortField = ref('author')
 const typeSort = ref('asc')
 
 const books = ref([
   {
     id: 1,
-    author: 'Dmitry Glukhovsky',
+    author: 'dmitry Glukhovsky',
     title: 'Metro 2033',
     image: 'https://images.app.goo.gl/j9HhhkHEX4qzvvfm8',
     bg: '#FFA26B'
@@ -22,9 +22,9 @@ const books = ref([
   {
     id: 12,
     author: 'AJames Clear',
-    title: 'Atomic Habits: An Easy',
+    title: 'atomic Habits: An Easy',
     image: 'https://m.media-amazon.com/images/P/0735211299.01._SCLZZZZZZZ_SX500_.jpg',
-    bg: '#00C48C'
+    bg: '#FF4500'
   },
   {
     id: 2,
@@ -37,21 +37,22 @@ const books = ref([
 
 const bookSorting = computed(() => {
     return books.value.sort((a, b) => {
-        let modifier = 1
-        if(typeSort.value === 'desc') modifier = -1
-        if(a[sortField.value] < b[sortField.value]) return -1 * modifier
-        if(a[sortField.value] > b[sortField.value]) return 1 * modifier
-        return 0
+        let modifier = typeSort.value === 'desc' ? -1 : 1
+        let aValue = a[sortField.value]
+        let bValue = b[sortField.value]
+        if (aValue === undefined || bValue === undefined) return 0
+        if (typeof aValue === 'string') aValue = aValue.toLowerCase()
+        if (typeof bValue === 'string') bValue = bValue.toLowerCase()
+        return (typeof aValue === 'number' && typeof bValue === 'number') 
+            ? (aValue - bValue) * modifier 
+            : aValue.localeCompare(bValue) * modifier
     })
 })
 
 const setSort = (name) => {
+    if(name === 'Cover') return // Ignore sorting when clicking on the "Cover" field
     if(sortField.value === name) {
-        if(typeSort.value === 'asc') {
-            typeSort.value = 'desc'
-        } else {
-            typeSort.value = 'asc'
-        }
+        typeSort.value = typeSort.value === 'asc' ? 'desc' : 'asc'
     } else {
         sortField.value = name
     }
