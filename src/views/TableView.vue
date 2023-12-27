@@ -37,24 +37,24 @@ const books = ref([
 
 const bookSorting = computed(() => {
     return books.value.sort((a, b) => {
-        let modifier = typeSort.value === 'desc' ? -1 : 1
-        let aValue = a[sortField.value]
-        let bValue = b[sortField.value]
-        if (aValue === undefined || bValue === undefined) return 0
-        if (typeof aValue === 'string') aValue = aValue.toLowerCase()
-        if (typeof bValue === 'string') bValue = bValue.toLowerCase()
+        let modifier = typeSort.value === 'desc' ? -1 : 1;
+        let aValue = a[sortField.value];
+        let bValue = b[sortField.value];
+        if (aValue === undefined || bValue === undefined) return 0;
+        aValue = typeof aValue === 'string' ? aValue.toLowerCase() : aValue;
+        bValue = typeof bValue === 'string' ? bValue.toLowerCase() : bValue;
         return (typeof aValue === 'number' && typeof bValue === 'number') 
             ? (aValue - bValue) * modifier 
-            : aValue.localeCompare(bValue) * modifier
+            : aValue.localeCompare(bValue) * modifier;
     })
 })
 
 const setSort = (name) => {
-    if(name === 'Cover') return // Ignore sorting when clicking on the "Cover" field
+    if(name === 'Cover') return; // Ignore sorting when clicking on the "Cover" field
     if(sortField.value === name) {
-        typeSort.value = typeSort.value === 'asc' ? 'desc' : 'asc'
+        typeSort.value = typeSort.value === 'asc' ? 'desc' : 'asc';
     } else {
-        sortField.value = name
+        sortField.value = name;
     }
 }
 </script>
