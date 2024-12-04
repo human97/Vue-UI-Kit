@@ -17,6 +17,7 @@ const links = ref([
     {name: 'Input', href: '/input'},
     {name: 'Tabs', href: '/tabs'},
     {name: 'Table', href: '/table'},
+    {name: 'Pagination', href: '/pagination'},
 ])
 </script>
 

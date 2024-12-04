@@ -18,7 +18,7 @@ const props = defineProps({
           'grid-template-columns': columnTemplates,
           'background-color': bgRow}"
     >
-        <slot></slot>
+        <slot>Temp</slot>
     </div>
 </template>
 

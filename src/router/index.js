@@ -10,54 +10,59 @@ import TabsView from '@/views/TabsView.vue'
 import TableView from '@/views/TableView.vue'
 
 const router = createRouter({
-    history: createWebHistory(),
-    routes: [
-        {
-            path: '/',
-            name: 'Index',
-            component: Index,
-        },
-        {
-            path: '/button',
-            name: 'ButtonView',
-            component: ButtonView,
-        },
-        {
-            path: '/typography',
-            name: 'Typography',
-            component: Typography,
-        },
-        {
-            path: '/checkbox',
-            name: 'CheckboxView',
-            component: CheckboxView,
-        },
-        {
-            path: '/radiobutton',
-            name: 'RadioButtonView',
-            component: RadioButtonView,
-        },
-        {
-            path: '/progress',
-            name: 'ProgressView',
-            component: ProgressView,
-        },
-        {
-            path: '/input',
-            name: 'InputView',
-            component: InputView,
-        },
-        {
-            path: '/tabs',
-            name: 'TabsView',
-            component: TabsView,
-        },
-        {
-            path: '/table',
-            name: 'TableView',
-            component: TableView,
-        },
-    ]
+	history: createWebHistory(),
+	routes: [
+		{
+			path: '/',
+			name: 'Index',
+			component: Index,
+		},
+		{
+			path: '/button',
+			name: 'ButtonView',
+			component: ButtonView,
+		},
+		{
+			path: '/typography',
+			name: 'Typography',
+			component: Typography,
+		},
+		{
+			path: '/checkbox',
+			name: 'CheckboxView',
+			component: CheckboxView,
+		},
+		{
+			path: '/radiobutton',
+			name: 'RadioButtonView',
+			component: RadioButtonView,
+		},
+		{
+			path: '/progress',
+			name: 'ProgressView',
+			component: ProgressView,
+		},
+		{
+			path: '/input',
+			name: 'InputView',
+			component: InputView,
+		},
+		{
+			path: '/tabs',
+			name: 'TabsView',
+			component: TabsView,
+		},
+		{
+			path: '/table',
+			name: 'TableView',
+			component: TableView,
+		},
+		{
+			path: '/pagination',
+			name: 'PaginationView',
+			component: () => import('@/views/PaginationView.vue')
+		},
+	],
 })
 
 export default router;
