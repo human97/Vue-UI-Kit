@@ -7,6 +7,7 @@
 - **SCSS**
 - **vue-router**
 - **vuelidate**
+- **fortawesome**
 
 UI Kit включает в себя следующие компоненты:
 
@@ -17,6 +18,7 @@ UI Kit включает в себя следующие компоненты:
 5. **Радиокнопки**: Позволяют выбрать один вариант из нескольких предложенных.
 6. **Инпуты с валидацией**: Реализованы с помощью библиотеки vuelidate, позволяют обеспечить корректность вводимых пользователем данных.
 7. **Прогресс бары**: Графические контролы, используемые для представления прогресса определенной задачи.
+8. **Пагинация**: Обеспечивает удобную навигацию по страницам с большим объемом данных. Реализована с возможностью кастомизации количества элементов на странице, отображения текущей страницы и управления кнопками перехода вперед и назад.
 
 Важно отметить, что этот UI Kit будет дополняться и развиваться, чтобы обеспечить более широкий набор инструментов для разработки пользовательских интерфейсов. Это делает его универсальным решением для многих проектов.
 
@@ -30,6 +32,7 @@ This project is a **UI Kit** developed using the following technologies:
 - **SCSS**
 - **vue-router**
 - **vuelidate**
+- **fortawesome**
 
 The UI Kit includes the following components:
 
@@ -40,6 +43,8 @@ The UI Kit includes the following components:
 5. **Radio Buttons**: Allow one option to be selected from several offered.
 6. **Inputs with validation**: Implemented using the vuelidate library, they ensure the correctness of the data entered by the user.
 7. **Progress Bars**: Graphic controls used to represent the progress of a certain task.
+8. **Pagination**: Provides easy navigation through pages with a large amount of data. It includes customization options for the number of items per page, displays the current page, and allows control through next and previous buttons.
+
 
 It's important to note that this UI Kit will be supplemented and developed further to provide a wider range of tools for developing user interfaces. This makes it a universal solution for many projects.
 
