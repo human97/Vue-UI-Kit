@@ -8,6 +8,6 @@ import AppPagination from '@/components/UI/AppPagination.vue';
     <h1>Pagination</h1>
 
     <AppPagination
-        :total-items="300"
+        :total-items="200"
     />  
 </template>
